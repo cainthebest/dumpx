@@ -23,7 +23,7 @@ struct DumpX {
     hex_region: usize,
 }
 
-impl DumpX{
+impl DumpX {
     const VERSION: &str = env!("CARGO_PKG_VERSION");
     const HEX_DIGITS: &[u8; 16] = b"0123456789abcdef";
 
@@ -128,7 +128,7 @@ impl DumpX{
         eprintln!("                   v{}", Self::VERSION);
         eprintln!("  Command line tool to dump any file as hex\n");
         eprintln!("Usage: dumpx{} [OPTIONS] <INPUT_FILE>\n", env::consts::EXE_SUFFIX);
-        eprintln!("  -o, --output <FILE>        write to FILE      [Optional] (stdout default)");
+        eprintln!("  -o, --output <FILE>        write to new FILE  [Optional] (stdout default)");
         eprintln!("  -w, --width <NUM>          bytes per line     [Optional] (default 16)");
         eprintln!("  -g, --group <NUM>          group size         [Optional] (default 4)");
         eprintln!("  -r, --replacement <CHAR>   non-printable char [Optional] (default '.')");
@@ -140,6 +140,13 @@ impl DumpX{
         let file = File::open(&self.input)?;
 
         if let Some(ref path) = self.output {
+            if path.exists() {
+                return Err(io::Error::new(
+                    io::ErrorKind::AlreadyExists,
+                    format!("output file '{}' already exists", path.display()),
+                ));
+            }
+
             self.dump(file, File::create(path)?)?;
         } else {
             self.dump(file, io::stdout().lock())?;
