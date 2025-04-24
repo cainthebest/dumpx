@@ -1,8 +1,15 @@
 [package]
 name = "dumpx"
-version = "0.0.0"
+version = "0.0.1"
 edition = "2024"
-description = "WIP: Not implemented yet, just a placeholder"
+description = "Fast and minimal command line tool to dump any file as hex"
 license = "MIT"
 
-[dependencies]
+[profile.release]
+lto = true
+strip = true
+rpath = true
+debug = false
+panic = "abort"
+opt-level = "z"
+codegen-units = 1
