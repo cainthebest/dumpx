@@ -1,11 +1,6 @@
-```log
-                                ██████╗ ██╗   ██╗███╗   ███╗██████╗ ██╗  ██╗
-                                ██╔══██╗██║   ██║████╗ ████║██╔══██╗╚██╗██╔╝
-                                ██║  ██║██║   ██║██╔████╔██║██████╔╝ ╚███╔╝
-                                ██║  ██║██║   ██║██║╚██╔╝██║██╔═══╝  ██╔██╗
-                                ██████╔╝╚██████╔╝██║ ╚═╝ ██║██║     ██╔╝ ██╗
-                                ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝
-```
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/29dd3ee8-8da7-4133-8be1-51f4b5bf8535" alt="image" />
+</p>
 
 <p align="center">
 A simple and flexible tool to dump any file into a human readable hex format. 
