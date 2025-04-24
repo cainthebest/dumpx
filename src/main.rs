@@ -93,11 +93,11 @@ impl HexDumper {
                 "-r" | "--replacement" => {
                     let s = args.next().ok_or("--replacement requires char")?;
                     let b = s.as_bytes();
-                    
+
                     if b.len() != 1 {
                         return Err("replacement must be single char");
                     }
-                    
+
                     hd.repl = b[0];
                 }
 
@@ -122,6 +122,8 @@ impl HexDumper {
 
     #[rustfmt::skip]
     fn help() -> ! {
+        // Im not sure on using eprint as i thought to keep help separate from any "real" output
+
         eprintln!("{}", HEADER);
         eprintln!("                   v{}", Self::VERSION);
         eprintln!("  Command line tool to dump any file as hex\n");
