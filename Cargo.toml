@@ -1,9 +1,12 @@
 [package]
 name = "dumpx"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2024"
 description = "Fast and minimal command line tool to dump any file as hex"
 license = "MIT"
+keywords = ["hex", "ascii", "dump", "file", "tool"]
+repository = "https://github.com/cainthebest/dumpx"
+categories = ["command-line-interface"]
 
 [profile.release]
 lto = true

@@ -14,7 +14,7 @@ const HEADER: &str = "
 ╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝  ╚═╝
 ";
 
-struct HexDumper {
+struct DumpX {
     input: PathBuf,
     output: Option<PathBuf>,
     width: usize,
@@ -23,7 +23,7 @@ struct HexDumper {
     hex_region: usize,
 }
 
-impl HexDumper {
+impl DumpX{
     const VERSION: &str = env!("CARGO_PKG_VERSION");
     const HEX_DIGITS: &[u8; 16] = b"0123456789abcdef";
 
@@ -59,7 +59,7 @@ impl HexDumper {
             Self::help();
         }
 
-        let mut hd = HexDumper {
+        let mut hd = DumpX {
             input: PathBuf::new(),
             output: None,
             width: 16,
@@ -203,7 +203,7 @@ impl HexDumper {
 }
 
 fn main() {
-    match HexDumper::new() {
+    match DumpX::new() {
         Err(e) => {
             eprintln!("Error: {}", e);
 
