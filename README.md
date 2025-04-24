@@ -8,13 +8,18 @@
 ```
 
 <p align="center">
-A simple and flexible tool to dump any file into a human readable hex format. Ideal for inspecting binaries, debugging file contents, or just satisfying your curiosity.
+A simple and flexible tool to dump any file into a human readable hex format. 
+</p>
+
+<p align="center">
+Ideal for inspecting binaries, debugging file contents, or just satisfying your curiosity.
 </p>
 
 ## ✨ Features
 
 - View any file's contents in hexadecimal + ASCII side by side
 - Easy to use with a simple command line interface
+- Minimal and lightweight, no dependencies included
 - Cross platform and blazing fast (thanks, Rust!)
 
 ## 📦 Installation
