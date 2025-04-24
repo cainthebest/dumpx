@@ -164,7 +164,7 @@ impl HexDumper {
                 line.extend_from_slice(b"0x");
 
                 for i in (0..8).rev() {
-                    line.push(Self::HEX_DIGITS[((offset >> (i * 4)) & 0xF) as usize]);
+                    line.push(Self::HEX_DIGITS[(offset >> (i * 4)) & 0xF]);
                 }
 
                 line.extend_from_slice(b": ");
