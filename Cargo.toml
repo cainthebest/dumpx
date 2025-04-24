@@ -2,7 +2,7 @@
 name = "dumpx"
 license = "MIT"
 edition = "2024"
-version = "0.0.2"
+version = "0.0.3"
 readme = "README.md"
 categories = ["command-line-interface"]
 repository = "https://github.com/cainthebest/dumpx"
