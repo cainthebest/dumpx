@@ -179,6 +179,9 @@ impl DumpX {
                 let mut i = 0;
 
                 // Prefix section: Write the offset prefix, e.g. "0x00000000: "
+                //TODO: Handle 4GiB+ offsets
+                //TODO: ngl thats quite a bit of data to look at but its possible someone might
+                //TODO: If we use 16 digits after 4GiB, then we can support 16EiB
 
                 line_buf[i..i + 2].copy_from_slice(b"0x");
                 i += 2;
