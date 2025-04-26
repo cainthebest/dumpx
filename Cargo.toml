@@ -2,12 +2,12 @@
 name = "dumpx"
 license = "MIT"
 edition = "2024"
-version = "0.0.4"
+version = "0.0.5"
 readme = "README.md"
 categories = ["command-line-interface"]
 repository = "https://github.com/cainthebest/dumpx"
 keywords = ["hex", "ascii", "dump", "file", "tool"]
-description = "Fast and minimal command line tool to dump any file as hex"
+description = "Simple and minimal command line tool to hexdump any file"
 
 
 [profile.release]

@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-A simple and flexible tool to dump any file into a human readable hex format. 
+A simple tool to dump any file into a human readable hex format.
 </p>
 
 <p align="center">
