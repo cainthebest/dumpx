@@ -25,6 +25,15 @@ Install via Cargo:
 cargo install dumpx
 ```
 
+## 🚀 Usage
+
+```bash
+dumpx <INPUT_FILE_PATH> [OPTIONS]
+
+Options:
+  -o, --output <OUTPUT_FILE_PATH>    Write to a new file (default: stdout)
+```
+
 ## 🔧 Issues
 
 If you encounter any issues, please open an issue on the [GitHub repository](https://github.com/cainthebest/dumpx).
