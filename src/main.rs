@@ -60,8 +60,8 @@ impl DumpX {
 
     /// Length of the offset prefix in the output line.
     ///
-    /// "0x" + 8 hex digits + ": "
-    const OFFSET_LEN: usize = 2 + 8 + 2;
+    /// "0x" + 16 hex digits + ": "
+    const OFFSET_LEN: usize = 2 + 16 + 2;
 
     /// Length of the hex section in the output line.
     const HEX_SECTION: usize =
@@ -178,15 +178,12 @@ impl DumpX {
             for chunk in io_buf[..n].chunks(Self::WIDTH) {
                 let mut i = 0;
 
-                // Prefix section: Write the offset prefix, e.g. "0x00000000: "
-                //TODO: Handle 4GiB+ offsets
-                //TODO: ngl thats quite a bit of data to look at but its possible someone might
-                //TODO: If we use 16 digits after 4GiB, then we can support 16EiB
+                // Prefix section: Write the offset prefix
 
                 line_buf[i..i + 2].copy_from_slice(b"0x");
                 i += 2;
 
-                for shift in (0..8).rev() {
+                for shift in (0..16).rev() {
                     line_buf[i] = Self::NIBBLE_LUT[(line_offset >> (shift * 4)) & 0xF];
                     i += 1;
                 }
